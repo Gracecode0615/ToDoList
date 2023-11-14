@@ -1,24 +1,24 @@
 // Selectors
 
-const toDoInput = document.querySelector('.todo-input');
-const toDoBtn = document.querySelector('.todo-btn');
-const toDoList = document.querySelector('.todo-list');
-const standardTheme = document.querySelector('.standard-theme');
-const lightTheme = document.querySelector('.light-theme');
-const darkerTheme = document.querySelector('.darker-theme');
+    const toDoInput = document.querySelector('.todo-input');
+    const toDoBtn = document.querySelector('.todo-btn');
+    const toDoList = document.querySelector('.todo-list');
+    const standardTheme = document.querySelector('.standard-theme');
+    const lightTheme = document.querySelector('.light-theme');
+    const darkerTheme = document.querySelector('.darker-theme');
 
 
 // Event Listeners
 
-toDoBtn.addEventListener('click', addToDo);
-toDoList.addEventListener('click', deletecheck);
-document.addEventListener("DOMContentLoaded", getTodos);
-standardTheme.addEventListener('click', () => changeTheme('standard'));
-lightTheme.addEventListener('click', () => changeTheme('light'));
-darkerTheme.addEventListener('click', () => changeTheme('darker'));
+    toDoBtn.addEventListener('click', addToDo);
+    toDoList.addEventListener('click', deletecheck);
+    document.addEventListener("DOMContentLoaded", getTodos);
+    standardTheme.addEventListener('click', () => changeTheme('standard'));
+    lightTheme.addEventListener('click', () => changeTheme('light'));
+    darkerTheme.addEventListener('click', () => changeTheme('darker'));
 
 // Check if one theme has been set previously and apply it (or std theme if not found):
-let savedTheme = localStorage.getItem('savedTheme');
+ let savedTheme = localStorage.getItem('savedTheme');
 savedTheme === null ?
     changeTheme('standard')
     : changeTheme(localStorage.getItem('savedTheme'));
@@ -201,3 +201,6 @@ function changeTheme(color) {
         });
     });
 }
+// time
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
